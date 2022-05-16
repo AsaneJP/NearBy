@@ -1,5 +1,6 @@
 import { FC, useState } from "react"
 import styled from "styled-components"
+import { CircleButton } from "../components/atoms/button/ CircleButton"
 import { Layout } from "../components/templates/Layout"
 
 export const Home: FC = () => {
@@ -15,10 +16,7 @@ export const Home: FC = () => {
   return (
     <Layout>
       <h1>aa</h1>
+      <CircleButton/>
     </Layout>
   )
 }
-
-const STitle = styled.h1`
-  color: red;
-`;
