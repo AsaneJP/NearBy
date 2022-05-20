@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Footer = () => (
   <SFooter>
@@ -14,4 +14,4 @@ const SFooter = styled.footer`
     align-items: center;
     margin-right: 25px;
   `}
-`;
+`

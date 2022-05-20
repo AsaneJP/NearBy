@@ -24,4 +24,4 @@ export const fonts = {
     semibold: 600,
     bold: 700,
   },
-};
+}

@@ -1,16 +1,11 @@
-import {
-  CSSObject,
-  FlattenSimpleInterpolation,
-  SimpleInterpolation,
-  css,
-} from 'styled-components';
+import { CSSObject, FlattenSimpleInterpolation, SimpleInterpolation, css } from 'styled-components'
 
 export const breakpoint = {
   base: (
     base: CSSObject | TemplateStringsArray,
     ...interpolations: SimpleInterpolation[]
   ): FlattenSimpleInterpolation => css`
-      ${css(base, ...interpolations)}
+    ${css(base, ...interpolations)}
   `,
   sm: (
     sm: CSSObject | TemplateStringsArray,
@@ -44,4 +39,4 @@ export const breakpoint = {
       ${css(xl, ...interpolations)}
     }
   `,
-};
+}

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Header = () => (
   <SHeader>
@@ -12,7 +12,7 @@ const SHeader = styled.header`
     position: fixed;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 60px;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -27,4 +27,4 @@ const SHeader = styled.header`
       margin-left: 5px;
     }
   `}
-`;
+`

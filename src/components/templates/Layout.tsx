@@ -8,14 +8,12 @@ type Props = {
 }
 
 export const Layout: FC<Props> = (props) => {
-  const { children } = props;
+  const { children } = props
 
   return (
     <SContainers>
       <Header />
-      <SMain>
-        {children}
-      </SMain>
+      <SMain>{children}</SMain>
       <Footer />
     </SContainers>
   )
@@ -31,7 +29,7 @@ const SContainers = styled.h1`
 const SMain = styled.main`
   ${({ theme }) => theme.breakpoint.base`
     background-color: ${theme.colors.primary};
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 50px;
   `}
-`;
+`

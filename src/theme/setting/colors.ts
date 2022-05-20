@@ -10,5 +10,6 @@ export const colors = {
 
   // テーマカラー（暗い）
   font: '#5f3700',
-  subColor: '#5f3700'
-};
+  subColor: '#5f3700',
+  bgColor: '#F0F1F3',
+}
