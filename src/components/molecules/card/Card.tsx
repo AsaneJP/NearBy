@@ -2,6 +2,7 @@ import { FC } from 'react'
 import styled from 'styled-components'
 
 type Props = {
+  id: string
   image: string
   category: string
   shop: string
@@ -9,10 +10,10 @@ type Props = {
 }
 
 export const Card: FC<Props> = (props) => {
-  const { image, category, shop, detail } = props
+  const { image, category, shop, detail, id } = props
   return (
     <SContainer>
-      <div>
+      <a href={`shop/${id}`}>
         <img src={image} alt="shop-logo" />
         <div>
           <h2>{category}</h2>
@@ -30,7 +31,7 @@ export const Card: FC<Props> = (props) => {
             </li>
           </ul>
         </div>
-      </div>
+      </a>
     </SContainer>
   )
 }
@@ -43,9 +44,10 @@ const SContainer = styled.div`
     overflow: hidden;
     margin-bottom: 1.5rem;
     box-shadow: 0px 0px 10px rgba(3, 3, 3, 0.4);
-    div{
+    a{
       display: flex;
       justify-content: space-between;
+      cursor: pointer;
       img{
         width: 5rem;
         height: 5rem;
@@ -82,7 +84,7 @@ const SContainer = styled.div`
   ${({ theme }) => theme.breakpoint.sm`
     width: 30%;
     margin: 5px;
-    div{
+    a{
       display: block;
       height: 100%;
       img {

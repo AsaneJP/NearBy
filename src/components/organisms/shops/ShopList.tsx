@@ -38,7 +38,14 @@ export const ShopsList = () => {
   return (
     <SSection>
       {shop.map((data) => (
-        <Card key={data.id} image={data.photo.pc.l} category={data.genre.name} shop={data.name} detail={data.address} />
+        <Card
+          key={data.id}
+          id={data.id}
+          image={data.photo.pc.l}
+          category={data.genre.name}
+          shop={data.name}
+          detail={data.address}
+        />
       ))}
     </SSection>
   )
