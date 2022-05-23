@@ -6,11 +6,11 @@ type Props = {
   image: string
   category: string
   shop: string
-  detail: string
+  access: string
 }
 
 export const Card: FC<Props> = (props) => {
-  const { image, category, shop, detail, id } = props
+  const { image, category, shop, access, id } = props
   return (
     <SContainer>
       <a href={`shop/${id}`}>
@@ -20,14 +20,21 @@ export const Card: FC<Props> = (props) => {
           <h1>{shop}</h1>
           <ul>
             <li>
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  fillRule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
                 />
               </svg>
-              {detail}
+              {access}
             </li>
           </ul>
         </div>
@@ -72,10 +79,10 @@ const SContainer = styled.div`
           margin-bottom: 1rem;
           li{
             font-size: ${theme.fonts.size.sm};
-          }
-          svg{
-            color: ${theme.colors.accent};
-            width: 0.8rem;
+            svg{
+              color: ${theme.colors.accent};
+              width: 0.8rem;
+            }
           }
         }
       }

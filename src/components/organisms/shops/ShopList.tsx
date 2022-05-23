@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import { Shops } from '../../../types/api/Shops'
 import { Shop } from '../../../types/Shop'
 import { Card } from '../../molecules/card/Card'
+import { Loading } from '../../molecules/loading/Loading'
 
 export const ShopsList = () => {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
   const [shop, setShop] = useState<Shop>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((data) => {
@@ -25,6 +27,7 @@ export const ShopsList = () => {
       .then((res) => {
         if (isMounted) {
           setShop(res.data.results.shop)
+          setLoading(false)
         }
       })
       .catch((err) => {
@@ -35,6 +38,10 @@ export const ShopsList = () => {
     }
   }, [position])
 
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <SSection>
       {shop.map((data) => (
@@ -44,7 +51,7 @@ export const ShopsList = () => {
           image={data.photo.pc.l}
           category={data.genre.name}
           shop={data.name}
-          detail={data.address}
+          access={data.access}
         />
       ))}
     </SSection>
