@@ -14,7 +14,7 @@ export const ShopDetail: FC = () => {
     let isMounted = true
     axios
       .get<Shops>(
-        `http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.REACT_APP_API_URL}&id=${param}&format=json`
+        `${process.env.REACT_APP_CORS_URL}http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.REACT_APP_API_URL}&id=${param}&format=json`
       )
       .then((res) => {
         if (isMounted) {

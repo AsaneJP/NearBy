@@ -20,7 +20,7 @@ export const ShopsList = () => {
     let isMounted = true
     axios
       .get<Shops>(
-        `http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.REACT_APP_API_URL}&lat=${position.latitude}&lng=${position.longitude}&range=5&count=100&format=json`
+        `${process.env.REACT_APP_CORS_URL}http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.REACT_APP_API_URL}&lat=${position.latitude}&lng=${position.longitude}&range=5&count=100&format=json`
       )
       .then((res) => {
         if (isMounted) {
@@ -59,6 +59,7 @@ const SSection = styled.section`
     justify-content: center;
     margin: 0 10px;
     background-color: ${theme.colors.bgColor};
+    min-height: 100vh;
   `}
   ${({ theme }) => theme.breakpoint.md`
     margin: 0 60px;

@@ -15,6 +15,7 @@ const SSection = styled.section`
     padding: 3rem 1.25rem 6rem 1.25rem;
     margin: 0 10px;
     background-color: ${theme.colors.bgColor};
+    min-height: 100vh;
   `}
   ${({ theme }) => theme.breakpoint.md`
     margin: 0 60px;
