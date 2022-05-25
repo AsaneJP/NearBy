@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { ShopDetail } from '../components/organisms/shops/ShopDetail'
 import { Layout } from '../components/templates/Layout'
 

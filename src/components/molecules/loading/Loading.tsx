@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Loader } from '../../atoms/loading/Loader'
 
 export const Loading = () => (

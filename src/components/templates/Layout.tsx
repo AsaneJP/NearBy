@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+
 import { Footer } from '../organisms/footer/Footer'
 import { Header } from '../organisms/header/Header'
 

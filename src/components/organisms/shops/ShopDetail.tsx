@@ -2,6 +2,7 @@ import axios from 'axios'
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
+
 import { Shops } from '../../../types/api/Shops'
 import { Shop } from '../../../types/Shop'
 import { Loading } from '../../molecules/loading/Loading'
@@ -23,6 +24,7 @@ export const ShopDetail: FC = () => {
         }
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err)
       })
     return () => {

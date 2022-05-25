@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+
 import { Shops } from '../../../types/api/Shops'
 import { Shop } from '../../../types/Shop'
 import { Card } from '../../molecules/card/Card'
@@ -31,6 +32,7 @@ export const ShopsList = () => {
         }
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err)
       })
     return () => {
