@@ -29,6 +29,7 @@ module.exports = {
   ],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
