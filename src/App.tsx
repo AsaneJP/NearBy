@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from 'styled-components'
 
 import { Router } from './router/Router'
@@ -9,11 +10,13 @@ import './styles/reset.css'
 import './App.css'
 
 const App: FC = () => (
-  <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <Router />
-    </ThemeProvider>
-  </BrowserRouter>
+  <RecoilRoot>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Router />
+      </ThemeProvider>
+    </BrowserRouter>
+  </RecoilRoot>
 )
 
 export default App

@@ -1,15 +1,16 @@
-import { FC } from 'react'
+import { FC, MouseEventHandler } from 'react'
 import styled from 'styled-components'
 
 type Props = {
   children: string
   color: string
+  onClick: MouseEventHandler<HTMLButtonElement>
 }
 
 export const PrimaryButton: FC<Props> = (props) => {
-  const { children, color } = props
+  const { children, color, onClick } = props
   return (
-    <SButton className={color} type="submit">
+    <SButton className={color} type="submit" onClick={onClick}>
       {children}
     </SButton>
   )

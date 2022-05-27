@@ -1,7 +1,10 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
 
+import { clickFlagState } from '../../../globalState/clickFlagState'
+import { searchState } from '../../../globalState/searchState'
 import { Shops } from '../../../types/api/Shops'
 import { Shop } from '../../../types/Shop'
 import { Card } from '../../molecules/card/Card'
@@ -11,6 +14,8 @@ export const ShopsList = () => {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
   const [shop, setShop] = useState<Shop>([])
   const [loading, setLoading] = useState(true)
+  const click = useRecoilValue(clickFlagState)
+  const search = useRecoilValue(searchState)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((data) => {
@@ -21,9 +26,12 @@ export const ShopsList = () => {
 
   useEffect(() => {
     let isMounted = true
+
+    setLoading(true)
+
     axios
       .get<Shops>(
-        `${process.env.REACT_APP_CORS_URL}http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.REACT_APP_API_URL}&lat=${position.latitude}&lng=${position.longitude}&range=5&count=100&format=json`
+        `${process.env.REACT_APP_CORS_URL}http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.REACT_APP_API_URL}&lat=${position.latitude}&lng=${position.longitude}&range=${search[0]}&count=${search[1]}&format=json`
       )
       .then((res) => {
         if (isMounted) {
@@ -38,7 +46,8 @@ export const ShopsList = () => {
     return () => {
       isMounted = false
     }
-  }, [position])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [position, click])
 
   if (loading) {
     return <Loading />

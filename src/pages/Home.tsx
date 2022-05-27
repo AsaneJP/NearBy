@@ -1,13 +1,15 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
+import { useRecoilState } from 'recoil'
 
 import { CircleButton } from '../components/atoms/button/ CircleButton'
 import { SearchWindow } from '../components/organisms/search/SearchWindow'
 import { ShopsList } from '../components/organisms/shops/ShopList'
 import { Layout } from '../components/templates/Layout'
+import { menuOpenState } from '../globalState/menuOpenState'
 import { ScrollControl } from '../hooks/ScrollControl'
 
 export const Home: FC = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useRecoilState(menuOpenState)
 
   const handleClick = () => {
     setOpen(!open)
