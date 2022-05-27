@@ -22,6 +22,7 @@ const SHeader = styled.header`
     color: ${theme.colors.font};
     font-weight: ${theme.fonts.weight.bold};
     box-shadow: 0px 10px 10px 0px rgba(252,190,097,0.4);
+    z-index: ${theme.zindex.top};
     img{
       width: 30px;
       margin-left: 5px;

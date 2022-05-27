@@ -1,11 +1,11 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { Footer } from '../organisms/footer/Footer'
 import { Header } from '../organisms/header/Header'
 
 type Props = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const Layout: FC<Props> = (props) => {

@@ -1,4 +1,5 @@
 export const zindex = {
+  top: 200,
   modal: 100,
   drawer: 50,
   floating: 40,

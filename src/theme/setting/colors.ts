@@ -8,8 +8,10 @@ export const colors = {
   secondary: '#fcbe61',
   accent: '#f77567',
 
-  // テーマカラー（暗い）
+  // その他
   font: '#5f3700',
   subColor: '#5f3700',
   bgColor: '#F0F1F3',
+
+  blue: '#3EA8FF',
 }
